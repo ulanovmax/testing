@@ -1,0 +1,298 @@
+// Variables
+
+$red: #FF0B53;
+$black: #101020;
+$trans: 0.3s;
+$text_col: #3D3D3D;
+
+// Mixins
+
+@mixin transition($prop, $anim) {
+  transition: $prop $trans $anim;
+}
+
+@mixin transform($property) {
+  transform: $property;
+  -webkit-transform: $property;
+  -moz-transform: $property;
+  -ms-trasform: $property;
+}
+
+// Specification
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  color: $black;
+}
+
+h1,h2,h3 {
+  font-weight: 700;
+  line-height: 1.2em;
+}
+
+h1 {
+  font-size: 34px;
+  @media screen and (min-width: 768px) {
+    font-size: 40px;
+  }
+  @media screen and (min-width: 1024px) {
+    font-size: 72px;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  @media screen and (min-width: 768px) {
+    font-size: 30px;
+  }
+  @media screen and (min-width: 1024px) {
+    font-size: 54px;
+    margin-bottom: 90px;
+  }
+}
+
+h3 {
+  font-size: 24px;
+  @media screen and (min-width: 768px) {
+    font-size: 28px;
+  }
+  @media screen and (min-width: 1024) {
+    font-size: 34px;
+  }
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 500;
+  @media screen and (min-width: 768px) {
+    font-size: 28px;
+  }
+  @media screen and (min-width: 1024px) {
+    font-size: 34px;
+  }
+}
+
+h5 {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5em;
+  @media screen and (min-width: 1024px) {
+    font-size: 24px;
+  }
+}
+
+a,span {
+  display: block;
+  font-weight: 400;
+}
+
+section {
+  padding: 50px 0;
+  @media screen and (min-width: 1024px) {
+    padding: 120px 0;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 1780px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn {
+  font-size: 24px;
+  color: #FBFBFB;
+  text-align: center;
+  padding: 18px 0;
+  border-radius: 36px;
+  background-color: $red;
+  width: 100%;
+  @include transition(background-color, ease);
+  &:hover {
+    background-color: #DA0242;
+  }
+  &.ghost {
+    border: 1px solid #fff;
+    background-color: transparent;
+    &:hover {
+      background-color: #FBFBFB;
+      color: $black;
+    }
+  }
+}
+
+// Hamburger
+
+.hamburger {
+  width: 34px;
+  height: 30px;
+  position: relative;
+  z-index: 100;
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    transition: top 0.2s ease-in-out 0.4s, transform 0.4s ease-in-out, opacity 0.2s ease-in-out 0.2s, left 0.2s ease-in-out;
+    -webkit-transition: top 0.2s ease-in-out 0.4s, transform 0.4s ease-in-out, opacity 0.2s ease-in-out 0.2s, left 0.2s ease-in-out;
+    -moz-transition: top 0.2s ease-in-out 0.4s, transform 0.4s ease-in-out, opacity 0.2s ease-in-out 0.2s, left 0.2s ease-in-out;
+    -ms-transition: top 0.2s ease-in-out 0.4s, transform 0.4s ease-in-out, opacity 0.2s ease-in-out 0.2s, left 0.2s ease-in-out;
+    &:nth-child(1) {
+      top: 0;
+    }
+    &:nth-child(2), &:nth-child(4) {
+      top: 12px;
+    }
+    &:nth-child(3) {
+      top: 24px;
+    }
+  }
+  &.active {
+    span {
+      &:nth-child(1) {
+        top: 18px;
+        @include transform( rotate(45deg) );
+      }
+      &:nth-child(2) {
+        top: 18px;
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        top: 18px;
+        @include transform( rotate(-45deg) );
+      }
+    }
+  }
+}
+
+// Menu
+
+.menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(104.93deg, rgba(122, 122, 122, 0.1) 1.86%, rgba(122, 122, 122, 0) 104.73%);
+  filter: drop-shadow(0px 4px 4px rgba(50, 50, 50, 0.15));
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  -moz-backdrop-filter: blur(30px);
+  -o-backdrop-filter: blur(30px);
+  -ms-backdrop-filter: blur(30px);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 99;
+  text-align: center;
+  -webkit-transition: visibility 0.3s ease, opacity 1s ease;
+  -moz-transition: visibility 0.3s ease, opacity 1s ease;
+  -o-transition: visibility 0.3s ease, opacity 1s ease;
+  transition: visibility 0.3s ease, opacity 1s ease;
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    .menu_list li {
+      @include transform(  translateY(0) );
+      opacity: 1;
+    }
+    .menu_list li:nth-child(1) {
+      -webkit-transition-delay: 100ms;
+      transition-delay: 100ms;
+    }
+    .menu_list li:nth-child(2) {
+      -webkit-transition-delay: 200ms;
+      transition-delay: 200ms;
+    }
+    .menu_list li:nth-child(3) {
+      -webkit-transition-delay: 300ms;
+      transition-delay: 300ms;
+    }
+    .menu_list li:nth-child(4) {
+      -webkit-transition-delay: 400ms;
+      transition-delay: 400ms;
+    }
+  }
+}
+
+.menu_list  {
+  li {
+    @include transform(  translateY(-40px) );
+    opacity: 0;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+  }
+}
+
+.menu_list {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 30px;
+  margin-left: 20px;
+  margin-top: 132px;
+}
+
+.menu_link {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 4px;
+  &:before,
+  a:after {
+    content: "";
+    position: absolute;
+    @include transition(left, linear)
+  }
+  &:before {
+    left: -100%;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+  }
+  &:hover {
+    &:before {
+      left: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hamburger {
+    display: none;
+  }
+  .menu {
+    display: block;
+  }
+  .menu_list {
+    flex-direction: row;
+    align-items: center;
+  }
+  .menu_link {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  
+}
+
