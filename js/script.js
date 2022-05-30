@@ -25,6 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
     link.addEventListener("click", () => {
       header.classList.remove("show");
       btnMenu.classList.remove("active");
+      document.body.style.overflow = '';
     });
   })
 
@@ -71,7 +72,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Swiper
   const pagination = document.querySelector('.team_pagination'),
-        pagBtn = pagination.querySelectorAll('.pag_item label')
+        pagBtn = pagination.querySelectorAll('.pag_item label');
 
   pagination.addEventListener('click', (event) => {
     let target = event.target;
@@ -89,6 +90,7 @@ window.addEventListener('DOMContentLoaded', () => {
     slidesPerView:'auto',
     loopedSlides: 3,
     spaceBetween: 20,
+    mousewheel: true,
     snapOnRelease: true,
     scrollbar: {
       el: ".swiper-scrollbar",

@@ -295,7 +295,6 @@ $text_col: #3D3D3D;
 }
 
 .pag_item {
-  padding: 8px 12px;
   &.active {
     background: $red;
     border-radius: 64px;
@@ -304,6 +303,7 @@ $text_col: #3D3D3D;
     }
   }
   label {
+    padding: 8px 12px;
     font-weight: 500;
     font-size: 14px;
     cursor: pointer;
@@ -313,10 +313,11 @@ $text_col: #3D3D3D;
     @media screen and (min-width: 768px) {
       font-size: 24px;
     }
+    @media screen and (min-width: 1280px) {
+      padding: 20px 44px;
+    }
   }
-  @media screen and (min-width: 1280px) {
-    padding: 20px 44px;
-  }
+  
 }
 
 .pag_input {
@@ -338,7 +339,7 @@ $text_col: #3D3D3D;
     flex: 0 0 auto;
     border: 3px solid #09121F;
     border-radius: 50%;
-    margin-right: 15px;
+    margin-right: 8px;
     background-repeat: no-repeat;
     background-size: 83%;
     background-position: center;
@@ -661,6 +662,7 @@ $text_col: #3D3D3D;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #f8f8f8;
   &::before {
     content: '';
     display: block;

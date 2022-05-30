@@ -134,6 +134,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .select__option {
   padding: 16px;
+  cursor: pointer;
 }
 
 .select__option_selected {
@@ -765,9 +766,6 @@ img {
   border-radius: 64px;
 }
 
-.pag_item {
-  padding: 8px 12px;
-}
 .pag_item.active {
   background: #FF0B53;
   border-radius: 64px;
@@ -776,6 +774,7 @@ img {
   color: #fff;
 }
 .pag_item label {
+  padding: 8px 12px;
   font-weight: 500;
   font-size: 14px;
   cursor: pointer;
@@ -791,7 +790,7 @@ img {
   }
 }
 @media screen and (min-width: 1280px) {
-  .pag_item {
+  .pag_item label {
     padding: 20px 44px;
   }
 }
@@ -816,7 +815,7 @@ img {
   flex: 0 0 auto;
   border: 3px solid #09121F;
   border-radius: 50%;
-  margin-right: 15px;
+  margin-right: 8px;
   background-repeat: no-repeat;
   background-size: 83%;
   background-position: center;
@@ -1126,6 +1125,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #f8f8f8;
 }
 .file_btn::before {
   content: "";
