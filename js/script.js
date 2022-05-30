@@ -100,11 +100,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Members Info
 
-  const btnsWrap = document.querySelectorAll('.read_more'),
-        membersList = document.querySelector('.members_list'),
+  const membersList = document.querySelector('.members_list'),
         member = document.querySelectorAll('.member_info'),
-        readMoreBtn = document.querySelectorAll('.read_more_btn'),
-        closeBtn = document.querySelectorAll('.close_btn');
+        readMoreBtn = document.querySelectorAll('.read_more_btn');
 
   readMoreBtn.forEach(btn => {  
     btn.addEventListener('click', e => {
