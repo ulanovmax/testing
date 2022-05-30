@@ -500,6 +500,7 @@ $text_col: #3D3D3D;
 
 .member_avatar {
   max-width: 100px;
+  height: 90px;
   border: 1px solid #9A9A9A;
   border-radius: 5px;
   img {
@@ -784,6 +785,10 @@ $text_col: #3D3D3D;
   .details_wrapper {
     flex-direction: row;
   }
+  .member_avatar {
+    max-width: 270px;
+    height: auto;
+  }
 }
 
 /* ---- 768 ---- */
@@ -803,9 +808,6 @@ $text_col: #3D3D3D;
   }
   .member_details {
     font-size: 20px;
-  }
-  .member_avatar {
-    max-width: 270px;
   }
   .contact_form {
     grid-template-columns: repeat(2,minmax(320px, 1fr));

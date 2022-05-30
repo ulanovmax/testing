@@ -4,7 +4,8 @@ window.addEventListener('DOMContentLoaded', () => {
   // Hamburger menu
 
   const btnMenu = document.querySelector(".hamburger"),
-        header = document.querySelector(".header");
+        header = document.querySelector(".header"),
+        menuLink = document.querySelectorAll('.menu_link');
 
   function toggleMenu() {
     if (header.classList.contains("show")) {
@@ -17,6 +18,13 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   btnMenu.addEventListener("click", toggleMenu);
+
+  menuLink.forEach(link => {
+    link.addEventListener("click", () => {
+      header.classList.remove("show");
+    });
+  })
+
 
   // Tabs 
 
@@ -79,7 +87,6 @@ window.addEventListener('DOMContentLoaded', () => {
     loopedSlides: 3,
     spaceBetween: 20,
     snapOnRelease: true,
-    // loop: true,
     scrollbar: {
       el: ".swiper-scrollbar",
       draggable: true

@@ -972,6 +972,7 @@ img {
 
 .member_avatar {
   max-width: 100px;
+  height: 90px;
   border: 1px solid #9A9A9A;
   border-radius: 5px;
 }
@@ -1241,6 +1242,11 @@ img {
   .details_wrapper {
     flex-direction: row;
   }
+
+  .member_avatar {
+    max-width: 270px;
+    height: auto;
+  }
 }
 /* ---- 768 ---- */
 @media screen and (min-width: 768px) {
@@ -1262,10 +1268,6 @@ img {
 
   .member_details {
     font-size: 20px;
-  }
-
-  .member_avatar {
-    max-width: 270px;
   }
 
   .contact_form {
