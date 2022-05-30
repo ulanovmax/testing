@@ -11,9 +11,11 @@ window.addEventListener('DOMContentLoaded', () => {
     if (header.classList.contains("show")) {
       header.classList.remove("show");
       btnMenu.classList.remove("active");
+      document.body.style.overflow = '';
     } else {
       header.classList.add("show");
       btnMenu.classList.add("active");
+      document.body.style.overflow = 'hidden';
     }
   }
 
