@@ -339,6 +339,7 @@ $text_col: #3D3D3D;
     background-repeat: no-repeat;
     background-size: 83%;
     background-position: center;
+    font-size: 26px;
   }
   &:not(:disabled):not(:checked)+label:hover::before {
     border-color: #fff;
@@ -351,8 +352,9 @@ $text_col: #3D3D3D;
     border-color: #fff;
   }
   &:checked+label::before {
-    background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='6' cy='6' r='5' fill='white'/%3E%3C/svg%3E");
-    border-color: #fff;
+    content: '◉';
+    // background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='6' cy='6' r='5' fill='white'/%3E%3C/svg%3E");
+    border: none;
   }
   &:disabled+label::before {
     background-color: #e9ecef;
@@ -889,6 +891,7 @@ $text_col: #3D3D3D;
   .pag_input+label::before {
     width: 25px;
     height: 25px;
+    font-size: 37px;
   }
 }
 
