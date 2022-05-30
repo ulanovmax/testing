@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*Reset default style*/
 * {
   padding: 0;
@@ -829,8 +828,8 @@ img {
   border-color: #fff;
 }
 .pag_input:checked + label::before {
-  content: "◉";
-  border: none;
+  border-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='6' cy='6' r='5' fill='white'/%3E%3C/svg%3E");
 }
 .pag_input:disabled + label::before {
   background-color: #e9ecef;
