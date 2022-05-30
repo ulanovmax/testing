@@ -251,6 +251,9 @@ img {
   overflow: hidden;
   position: relative;
   padding-bottom: 4px;
+}
+
+.link_hover {
   &:before,
   a:after {
     content: "";
@@ -270,6 +273,8 @@ img {
     }
   }
 }
+
+// Responsive
 
 @media screen and (max-width: 1024px) {
   .menu {
@@ -322,7 +327,28 @@ img {
   .hamburger {
     display: none;
   }
+}
 
-  
+// Animations
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 

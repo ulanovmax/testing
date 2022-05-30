@@ -75,9 +75,11 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   const swiper = new Swiper('.team_slider', {
-    slidesPerView: 3,
+    slidesPerView:'auto',
+    loopedSlides: 3,
     spaceBetween: 20,
-    loop: true,
+    snapOnRelease: true,
+    // loop: true,
     scrollbar: {
       el: ".swiper-scrollbar",
       draggable: true
@@ -92,10 +94,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const btnsWrap = document.querySelectorAll('.read_more'),
         membersList = document.querySelector('.members_list'),
+        member = document.querySelectorAll('.member_info'),
         readMoreBtn = document.querySelectorAll('.read_more_btn'),
         closeBtn = document.querySelectorAll('.close_btn');
 
-  readMoreBtn.forEach(btn => {
+  readMoreBtn.forEach(btn => {  
     btn.addEventListener('click', e => {
       const actBtn = e.target.dataset.btn;
       for (let i = 0; i < membersList.children.length; i++) {
@@ -107,34 +110,35 @@ window.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-  closeBtn.forEach((btn, i) => {
-    btn.addEventListener('click', () => {
-      membersList.children[i].classList.remove('active');
+  member.forEach(item => {
+    item.addEventListener('click', e => {
+      let target = e.target;
+
+      if (target && target.classList.contains('close_btn')) {
+        item.classList.remove('active');
+      }
+      if (target === item) {
+        item.classList.remove('active');
+      }
     })
   })
 
+  // Upload File
 
+  const file = document.getElementById('file_cv');
+  const formPreview = document.querySelector('.file_btn');
 
-  // for (let j = 0; j < tabItems.length; j++) {
-  //     tabItems[j].addEventListener('click', event => {
-  //         const actTab = event.target.dataset.btn;
-  //         changeClass(event.target);
-  //         for (let i = 0; i < contents.children.length; i++) {
-  //             contents.children[i].classList.remove('active');
-  //             if (contents.children[i].dataset.content == actTab) {
-  //                 contents.children[i].classList.add('active')
-  //             }
-  //         }
-  //     })
-  // }
+  file.addEventListener('change', () => {
+    uploadFile(file.files[0])
+  });
 
-
+  function uploadFile(file) {
+    const fileRead = new FileReader();
+    formPreview.innerHTML = file.name;
+  }
 
   // Custom Select
   const select1 = new CustomSelect('#select_job');
-
-  // 
-
 
 
 })
