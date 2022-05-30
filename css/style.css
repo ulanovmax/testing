@@ -648,11 +648,16 @@ img {
   gap: 20px;
   width: 100%;
   justify-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 @media screen and (min-width: 360px) {
   .tab_buttons {
     grid-template-columns: repeat(2, 160px);
+  }
+}
+@media screen and (min-width: 480px) {
+  .tab_buttons {
+    justify-content: center;
   }
 }
 

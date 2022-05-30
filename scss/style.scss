@@ -179,9 +179,12 @@ $text_col: #3D3D3D;
   gap: 20px;
   width: 100%;
   justify-items: center;
-  justify-content: center;
+  justify-content: space-between;
   @media screen and (min-width: 360px) {
     grid-template-columns: repeat(2,160px);
+  }
+  @media screen and (min-width: 480px) {
+    justify-content: center;
   }
 }
 
@@ -352,7 +355,6 @@ $text_col: #3D3D3D;
     border-color: #fff;
   }
   &:checked+label::before {
-    // content: '◉';
     border-color: #fff;
     background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='6' cy='6' r='5' fill='white'/%3E%3C/svg%3E");
   }
