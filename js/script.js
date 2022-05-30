@@ -22,6 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
   menuLink.forEach(link => {
     link.addEventListener("click", () => {
       header.classList.remove("show");
+      btnMenu.classList.remove("active");
     });
   })
 
